@@ -17,4 +17,7 @@ jobs:
 
       - name: Commit
         run: |
-          echo ${{ github.sha }}
+          echo ${{ github.sha }} >> history
+          git add history
+          git commit -m 'add history [ci skip]'
+          git push origin master
